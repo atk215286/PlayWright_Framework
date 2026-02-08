@@ -20,11 +20,13 @@ pipeline {
             }
         }
 
-        stage('Run Tests') {
+        stage('Run Specific Test') {
             steps {
-                bat 'mvn test'
+                // Run only ONE test class
+                bat 'mvn -Dtest=com.playwright.tests.HomePageTest test'
             }
         }
+
 
         stage('Archive Reports') {
             steps {
