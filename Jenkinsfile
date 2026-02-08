@@ -27,7 +27,7 @@ pipeline {
                 // To run a specific test method, use:
                 // bat 'mvn -Dtest=com.playwright.tests.HomePageTest#testHomePageTitle test'
 
-                bat 'mvn -Dtest=com.playwright.ApiTests.ClientEndpointTest test'
+                bat 'mvn -Dtest=com.playwright.api.EndpointTest test'
             }
         }
 

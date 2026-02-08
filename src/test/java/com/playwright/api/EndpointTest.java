@@ -1,4 +1,4 @@
-package com.ApiTests;
+package com.playwright.api;
 
 import org.testng.annotations.Test;
 
@@ -6,7 +6,7 @@ import com.playwright.core.RestApi.Endpoints.app_demo.ClientEndpoint;
 
 import io.restassured.response.Response;
 
-public class Endpoint_validation {
+public class EndpointTest {
     ClientEndpoint client = new ClientEndpoint();
 
     @Test

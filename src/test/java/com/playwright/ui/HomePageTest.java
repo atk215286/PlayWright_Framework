@@ -1,4 +1,4 @@
-package com.playwright.test;
+package com.playwright.ui;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
