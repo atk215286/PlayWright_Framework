@@ -1,4 +1,4 @@
-package tests;
+package com.playwright.test;
 
 import java.util.Arrays;
 
