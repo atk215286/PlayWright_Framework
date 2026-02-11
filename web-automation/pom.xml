@@ -37,6 +37,14 @@
             
         </dependency>
 
+        <dependency>
+    <groupId>com.playwright.framework</groupId>
+    <artifactId>platform-core</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <classifier>tests</classifier>
+    <scope>test</scope>
+</dependency>
+
     </dependencies>
 
 </project>

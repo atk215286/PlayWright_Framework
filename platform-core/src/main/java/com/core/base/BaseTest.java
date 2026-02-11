@@ -1,62 +1,75 @@
 package com.core.base;
 
-import java.util.Arrays;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
+import com.core.factory.PlaywrightFactory;
 import com.microsoft.playwright.Browser;
 import com.microsoft.playwright.BrowserContext;
-import com.microsoft.playwright.BrowserType;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Playwright;
+import com.microsoft.playwright.Tracing;
 
+import io.qameta.allure.Attachment;
 
-public class BaseTest {
+public abstract class BaseTest {
 
     protected Playwright playwright;
     protected Browser browser;
     protected BrowserContext context;
     protected Page page;
-    protected PageFactoryManager pages;
 
-    @BeforeSuite
-    public void setupSuite() {
-        playwright = Playwright.create();
-        browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions()
-                .setHeadless(false)
-                .setArgs(Arrays.asList("--start-maximized"))
-        );
-    }
+    @BeforeMethod(alwaysRun = true)
+    public void setUp() {
 
-    @BeforeMethod
-    public void setupTest() {
-        context = browser.newContext(
-         new Browser.NewContextOptions()
-            .setViewportSize(null)
-        );
+        // Force Allure results into target/allure-results even when running from VS Code
+        System.setProperty("allure.results.directory", "target/allure-results");
+
+        PlaywrightFactory factory = new PlaywrightFactory();
+        playwright = factory.getPlaywright();
+        browser = factory.getBrowser(playwright);
+        context = factory.getBrowserContext(browser);
+
+        // Start tracing
+        context.tracing().start(new Tracing.StartOptions()
+            .setScreenshots(true)
+            .setSnapshots(true)
+            .setSources(true));
+
         page = context.newPage();
-        pages = new PageFactoryManager(page);
     }
 
-    @AfterMethod
-    public void tearDownTest() {
-        if (context != null) {
-            context.close();
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(ITestResult result) {
+
+        // Attach screenshot on failure
+        if (!result.isSuccess()) {
+        attachScreenshot();
+        attachTrace();
         }
+
+        if (context != null) context.close();
+        if (browser != null) browser.close();
+        if (playwright != null) playwright.close();
     }
 
-    @AfterSuite
-    public void tearDownSuite() {
-        if (browser != null) {
-            browser.close();
-        }
-        if (playwright != null) {
-            playwright.close();
-        }
-    }
+    @Attachment(value = "Failure Screenshot", type = "image/png")
+public byte[] attachScreenshot() {
+    return page.screenshot(new Page.ScreenshotOptions().setFullPage(true));
 }
 
+@Attachment(value = "Playwright Trace", type = "application/zip")
+public byte[] attachTrace() {
+    try {
+        context.tracing().stop(new Tracing.StopOptions()
+                .setPath(Paths.get("target/allure-results/trace.zip")));
+        return Files.readAllBytes(Paths.get("target/allure-results/trace.zip"));
+    } catch (Exception e) {
+        return null;
+    }
+}
+}

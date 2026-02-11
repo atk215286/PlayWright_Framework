@@ -18,4 +18,48 @@
         <module>test-orchestration</module>
     </modules>
 
+    <properties>
+        <allure.version>2.27.0</allure.version>
+    </properties>
+
+    <!-- THIS is the correct place for shared dependencies -->
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- Allure TestNG -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-testng</artifactId>
+                <version>${allure.version}</version>
+            </dependency>
+
+            <!-- Allure Java Commons -->
+            <dependency>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-java-commons</artifactId>
+                <version>${allure.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+
+                <!-- Allure Maven Plugin -->
+                <plugin>
+                    <groupId>io.qameta.allure</groupId>
+                    <artifactId>allure-maven</artifactId>
+                    <version>2.12.0</version>
+                    <configuration>
+                         <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    </configuration>
+
+                </plugin>
+
+            </plugins>
+        </pluginManagement>
+    </build>
+
 </project>
