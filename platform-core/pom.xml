@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.playwright.framework</groupId>
+        <artifactId>playwright-testng-automation</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>platform-core</artifactId>
+
+    <dependencies>
+
+        <!-- Playwright (core utilities may need it) -->
+        <dependency>
+            <groupId>com.microsoft.playwright</groupId>
+            <artifactId>playwright</artifactId>
+            <version>1.49.0</version>
+        </dependency>
+
+        <!-- OkHttp for AI client -->
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+
+        <!-- JSON -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20240303</version>
+        </dependency>
+
+        <!-- Jackson -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.17.0</version>
+        </dependency>
+
+         <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

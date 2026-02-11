@@ -1,8 +1,0 @@
-com\playwright\core\Ollama\SelfHealingClient.class
-com\playwright\core\RestApi\BaseApi.class
-com\playwright\Main.class
-com\playwright\core\RestApi\Endpoints\app_demo\ClientEndpoint.class
-com\playwright\pages\BasePage.class
-com\playwright\pages\PageFactoryManager.class
-com\playwright\core\RestApi\TokenManager.class
-com\playwright\pages\app1\PlaywrightHomePage.class

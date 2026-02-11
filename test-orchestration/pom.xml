@@ -1,0 +1,50 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.playwright.framework</groupId>
+        <artifactId>playwright-testng-automation</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>test-orchestration</artifactId>
+
+    <dependencies>
+
+        <!-- Web module -->
+        <dependency>
+            <groupId>com.playwright.framework</groupId>
+            <artifactId>web-automation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- API module -->
+        <dependency>
+            <groupId>com.playwright.framework</groupId>
+            <artifactId>api-automation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- Mobile module -->
+        <!--
+        <dependency>
+            <groupId>com.playwright.framework</groupId>
+            <artifactId>mobile-automation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        -->
+
+        <!-- TestNG -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.10.2</version>
+        </dependency>
+
+    </dependencies>
+
+</project>
