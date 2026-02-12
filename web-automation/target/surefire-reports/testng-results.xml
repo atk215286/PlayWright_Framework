@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-12T16:06:21 EST" name="Playwright Automation Suite" finished-at="2026-02-12T16:08:00 EST" duration-ms="99158">
+    <groups>
+    </groups>
+    <test started-at="2026-02-12T16:06:21 EST" name="UI Tests" finished-at="2026-02-12T16:08:00 EST" duration-ms="99158">
+      <class name="com.web.HomePageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:06:21 EST" name="setUp" finished-at="2026-02-12T16:06:28 EST" duration-ms="7099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validateGetStartedButtonNavigation()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:06:28 EST" name="validateGetStartedButtonNavigation" finished-at="2026-02-12T16:07:30 EST" duration-ms="61464" status="FAIL">
+          <exception class="com.microsoft.playwright.TimeoutError">
+            <message>
+              <![CDATA[Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\progress.js:75:26)
+    at Frame.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1022:23)
+    at FrameDispatcher.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+-   - waiting for locator("text=F started")
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\progress.js:75:26)
+    at Frame.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1022:23)
+    at FrameDispatcher.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+-   - waiting for locator("text=F started")
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:52)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:132)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:118)
+at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:97)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:175)
+at com.microsoft.playwright.Locator.click(Locator.java:2493)
+at com.core.base.BasePage.click(BasePage.java:44)
+at com.web.pages.PlaywrightHomePage.clickGetStarted(PlaywrightHomePage.java:24)
+at com.web.HomePageTest.validateGetStartedButtonNavigation(HomePageTest.java:43)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: com.microsoft.playwright.TimeoutError: Error {
+  message='Timeout 30000ms exceeded.
+  name='TimeoutError
+  stack='TimeoutError: Timeout 30000ms exceeded.
+    at ProgressController.run (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\progress.js:75:26)
+    at Frame.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1022:23)
+    at FrameDispatcher.click (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\frameDispatcher.js:158:30)
+    at FrameDispatcher._handleCommand (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:94:40)
+    at DispatcherConnection.dispatch (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\dispatchers\dispatcher.js:361:39)
+}
+Call log:
+-   - waiting for locator("text=F started")
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:254)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:130)
+... 34 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.TimeoutError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateGetStartedButtonNavigation -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:30 EST" name="tearDown" finished-at="2026-02-12T16:07:31 EST" duration-ms="1588" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateGetStartedButtonNavigation status=FAILURE method=HomePageTest.validateGetStartedButtonNavigation()[pri:0, instance:com.web.HomePageTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:31 EST" name="setUp" finished-at="2026-02-12T16:07:32 EST" duration-ms="917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyGetStartedNavigation()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:32 EST" name="verifyGetStartedNavigation" finished-at="2026-02-12T16:07:51 EST" duration-ms="18842" status="FAIL">
+          <exception class="com.microsoft.playwright.PlaywrightException">
+            <message>
+              <![CDATA[Error {
+  message='Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+  name='Error
+  stack='Error: Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:62:61
+    at visit (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:145:7)
+    at visitAllSelectorParts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:149:3)
+    at Selectors.parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:59:47)
+    at FrameSelectors._parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:32:51)
+    at FrameSelectors.resolveFrameForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:147:29)
+    at FrameSelectors.resolveInjectedForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:152:33)
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:960:45
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:935:24)
+    at async C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1023:29
+}
+Call log:
+-   - waiting for locator("textStartsWith= F started")
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[com.microsoft.playwright.PlaywrightException: Error {
+  message='Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+  name='Error
+  stack='Error: Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:62:61
+    at visit (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:145:7)
+    at visitAllSelectorParts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:149:3)
+    at Selectors.parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:59:47)
+    at FrameSelectors._parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:32:51)
+    at FrameSelectors.resolveFrameForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:147:29)
+    at FrameSelectors.resolveInjectedForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:152:33)
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:960:45
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:935:24)
+    at async C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1023:29
+}
+Call log:
+-   - waiting for locator("textStartsWith= F started")
+
+at com.microsoft.playwright.impl.WaitableResult.get(WaitableResult.java:56)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:132)
+at com.microsoft.playwright.impl.Connection.sendMessage(Connection.java:130)
+at com.microsoft.playwright.impl.ChannelOwner.sendMessage(ChannelOwner.java:118)
+at com.microsoft.playwright.impl.FrameImpl.clickImpl(FrameImpl.java:252)
+at com.microsoft.playwright.impl.FrameImpl.lambda$click$8(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LoggingSupport.lambda$withLogging$0(LoggingSupport.java:36)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:47)
+at com.microsoft.playwright.impl.ChannelOwner.withLogging(ChannelOwner.java:97)
+at com.microsoft.playwright.impl.LoggingSupport.withLogging(LoggingSupport.java:35)
+at com.microsoft.playwright.impl.FrameImpl.click(FrameImpl.java:243)
+at com.microsoft.playwright.impl.LocatorImpl.click(LocatorImpl.java:175)
+at com.microsoft.playwright.Locator.click(Locator.java:2493)
+at com.core.base.BasePage.click(BasePage.java:44)
+at com.web.pages.PlaywrightHomePage.clickGetStarted(PlaywrightHomePage.java:24)
+at com.web.HomePageTest.verifyGetStartedNavigation(HomePageTest.java:30)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: com.microsoft.playwright.impl.DriverException: Error {
+  message='Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+  name='Error
+  stack='Error: Unknown engine "textStartsWith" while parsing selector textStartsWith= F started
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:62:61
+    at visit (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:145:7)
+    at visitAllSelectorParts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\utils\isomorphic\selectorParser.js:149:3)
+    at Selectors.parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\selectors.js:59:47)
+    at FrameSelectors._parseSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:32:51)
+    at FrameSelectors.resolveFrameForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:147:29)
+    at FrameSelectors.resolveInjectedForSelector (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frameSelectors.js:152:33)
+    at C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:960:45
+    at async Frame.retryWithProgressAndTimeouts (C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:935:24)
+    at async C:\Users\antot\AppData\Local\Temp\playwright-java-11877832746649089246\package\lib\server\frames.js:1023:29
+}
+Call log:
+-   - waiting for locator("textStartsWith= F started")
+
+at com.microsoft.playwright.impl.Connection.dispatch(Connection.java:259)
+at com.microsoft.playwright.impl.Connection.processOneMessage(Connection.java:211)
+at com.microsoft.playwright.impl.ChannelOwner.runUntil(ChannelOwner.java:130)
+... 34 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- com.microsoft.playwright.PlaywrightException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyGetStartedNavigation -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:51 EST" name="tearDown" finished-at="2026-02-12T16:07:52 EST" duration-ms="1241" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyGetStartedNavigation status=FAILURE method=HomePageTest.verifyGetStartedNavigation()[pri:0, instance:com.web.HomePageTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:52 EST" name="setUp" finished-at="2026-02-12T16:07:53 EST" duration-ms="837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyHomePageHeader()[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:53 EST" name="verifyHomePageHeader" finished-at="2026-02-12T16:07:54 EST" duration-ms="541" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyHomePageHeader -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.web.HomePageTest@76b1e9b8]" started-at="2026-02-12T16:07:54 EST" name="tearDown" finished-at="2026-02-12T16:08:00 EST" duration-ms="6504" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyHomePageHeader status=SUCCESS method=HomePageTest.verifyHomePageHeader()[pri:0, instance:com.web.HomePageTest@76b1e9b8] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.web.HomePageTest -->
+    </test> <!-- UI Tests -->
+  </suite> <!-- Playwright Automation Suite -->
+</testng-results>
