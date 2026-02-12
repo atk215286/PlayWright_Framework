@@ -26,9 +26,6 @@ public abstract class BaseTest {
     @BeforeMethod(alwaysRun = true)
     public void setUp() {
 
-        // Force Allure results into target/allure-results even when running from VS Code
-        System.setProperty("allure.results.directory", "target/allure-results");
-
         PlaywrightFactory factory = new PlaywrightFactory();
         playwright = factory.getPlaywright();
         browser = factory.getBrowser(playwright);

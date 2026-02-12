@@ -1,4 +1,0 @@
-"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Wed Feb 11 16:38:42 EST 2026","Wed Feb 11 16:38:43 EST 2026","905","Surefire suite","Surefire test","com.web.HomePageTest","com.web.HomePageTest","verifyHomePageHeader","verifyHomePageHeader",""
-"passed","Wed Feb 11 16:37:17 EST 2026","Wed Feb 11 16:38:07 EST 2026","50275","Surefire suite","Surefire test","com.web.HomePageTest","com.web.HomePageTest","validateGetStartedButtonNavigation","validateGetStartedButtonNavigation",""
-"passed","Wed Feb 11 16:38:10 EST 2026","Wed Feb 11 16:38:39 EST 2026","29242","Surefire suite","Surefire test","com.web.HomePageTest","com.web.HomePageTest","verifyGetStartedNavigation","verifyGetStartedNavigation",""

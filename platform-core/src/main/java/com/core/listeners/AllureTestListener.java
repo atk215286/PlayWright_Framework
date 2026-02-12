@@ -1,14 +1,23 @@
 package com.core.listeners;
 
-import java.util.List;
-
 import org.testng.IAlterSuiteListener;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
 import org.testng.xml.XmlSuite;
 
-public class AllureTestListener implements IAlterSuiteListener {
+import io.qameta.allure.Allure;
+
+public class AllureTestListener implements ITestListener, IAlterSuiteListener {
+
     @Override
-    public void alter(List<XmlSuite> suites) {
-        System.setProperty("allure.results.directory",
-                "target/allure-results");
+    public void onTestStart(ITestResult result) {
+        String browser = System.getProperty("browser", "chromium");
+        Allure.label("browser", browser);
+        Allure.parameter("Browser", browser);
+    }
+
+    @Override
+    public void alter(java.util.List<XmlSuite> suites) {
+        System.setProperty("allure.results.directory", "target/allure-results");
     }
 }

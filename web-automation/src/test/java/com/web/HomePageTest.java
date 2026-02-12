@@ -15,7 +15,7 @@ public class HomePageTest extends BaseTest {
 
         homePage.open();
         String header = homePage.getHeader();
-
+        System.out.println("Header text: " + header);
         Assert.assertTrue(
                 header.contains("Playwright"),
                 "Expected header to contain 'Playwright' but got: " + header

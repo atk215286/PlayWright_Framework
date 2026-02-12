@@ -47,4 +47,68 @@
 
     </dependencies>
 
+    <build>
+    <plugins>
+
+        <plugin>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>3.3.1</version>
+            <executions>
+
+                <execution>
+                    <id>copy-web-results</id>
+                    <phase>prepare-package</phase>
+                    <goals><goal>copy-resources</goal></goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/allure-results</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>../web-automation/target/allure-results</directory>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>copy-api-results</id>
+                    <phase>prepare-package</phase>
+                    <goals><goal>copy-resources</goal></goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/allure-results</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>../api-automation/target/allure-results</directory>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+
+                <execution>
+                    <id>copy-mobile-results</id>
+                    <phase>prepare-package</phase>
+                    <goals><goal>copy-resources</goal></goals>
+                    <configuration>
+                        <outputDirectory>${project.build.directory}/allure-results</outputDirectory>
+                        <resources>
+                            <resource>
+                                <directory>../mobile-automation/target/allure-results</directory>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+
+            </executions>
+        </plugin>
+
+        <plugin>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-maven</artifactId>
+            <configuration>
+                <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+            </configuration>
+        </plugin>
+
+    </plugins>
+</build>
+
 </project>
