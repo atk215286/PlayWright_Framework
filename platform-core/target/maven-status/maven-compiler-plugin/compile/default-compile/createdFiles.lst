@@ -1,0 +1,8 @@
+com\core\ai\SelfHealingClient.class
+com\core\base\BasePage.class
+com\core\base\BaseTest.class
+com\core\factory\PageFactoryManager.class
+com\core\ollama\SelfHealingClient.class
+com\core\listeners\AllureTestListener.class
+com\core\factory\PlaywrightFactory.class
+com\core\config\ConfigManger.class
