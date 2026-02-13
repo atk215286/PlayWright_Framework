@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="API Automation Suite">
+
+    <listeners>
+        <listener class-name="com.core.listeners.AllureTestListener"/>
+    </listeners>
+
+    <test name="API Tests">
+        <classes>
+            <class name="com.api.EndpointsTest"/>
+        </classes>
+    </test>
+
+</suite>

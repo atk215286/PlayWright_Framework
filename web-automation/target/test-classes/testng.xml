@@ -2,7 +2,7 @@
 <suite name="Playwright Automation Suite" parallel="tests" thread-count="2">
 
     <listeners>
-        <listener class-name="com.core.listeners.AllureTestListener"/>
+     <!--  <listener class-name="com.core.listeners.AllureTestListener"/> -->
     </listeners>
 
 
