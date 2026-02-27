@@ -15,36 +15,49 @@
 
     <dependencies>
 
-        <!-- Core framework -->
+        <!-- Shared automation engine (BasePage, BaseTest, factories, listeners) -->
         <dependency>
             <groupId>com.playwright.framework</groupId>
             <artifactId>platform-core</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 
-        <!-- Playwright -->
+        <!-- Playwright for web tests -->
         <dependency>
             <groupId>com.microsoft.playwright</groupId>
             <artifactId>playwright</artifactId>
-            <version>1.49.0</version>
         </dependency>
 
-        <!-- TestNG -->
+        <!-- TestNG for test execution -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.2</version>
-            
         </dependency>
 
+        <!-- Allure reporting for web tests -->
         <dependency>
-    <groupId>com.playwright.framework</groupId>
-    <artifactId>platform-core</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <classifier>tests</classifier>
-    <scope>test</scope>
-</dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+        </dependency>
 
     </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Enable TestNG suite execution for web tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>false</skipTests>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/web-suite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

@@ -1,0 +1,72 @@
+package com.mobile.drivers;
+
+import java.net.URL;
+import java.time.Duration;
+
+import com.google.gson.JsonObject;
+import com.mobile.config.CapabilityLoader;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.android.options.UiAutomator2Options;
+
+/**
+ * AndroidDriverManager
+ *
+ * Enterprise-grade driver factory responsible for:
+ *  - Loading capabilities from JSON
+ *  - Constructing UiAutomator2Options (Appium 9.x standard)
+ *  - Creating and returning a fully configured AndroidDriver instance
+ *  - Ensuring clean error handling and predictable driver lifecycle
+ *
+ * This class is intentionally stateless to support parallel execution
+ * and avoid driver leakage across threads.
+ */
+public class AndroidDriverManager {
+
+    /** Path to capability JSON file */
+    private static final String CAPABILITY_PATH =
+            "src/main/resources/android/capabilities.json";
+
+    /** Appium server endpoint */
+    private static final String APPIUM_SERVER_URL =
+            "http://127.0.0.1:4723";
+
+    /**
+     * Creates and returns a new AndroidDriver instance.
+     *
+     * @return AppiumDriver instance configured for Android
+     */
+    public AppiumDriver createDriver() {
+        try {
+            // Load capabilities from JSON
+            JsonObject caps = CapabilityLoader.load(CAPABILITY_PATH);
+
+            // Build UiAutomator2Options (Appium 9.x requirement)
+           // UiAutomator2Options options = new UiAutomator2Options();
+
+            // Apply JSON capabilities dynamically
+            caps.entrySet().forEach(entry ->
+                    options.setCapability(entry.getKey(), entry.getValue().getAsString())
+            );
+
+            // Enterprise-level defaults (recommended for stability)
+            options.setNewCommandTimeout(Duration.ofSeconds(120));
+            options.setAutoGrantPermissions(true);
+
+            // Create driver instance
+            return new AndroidDriver(
+                    new URL(APPIUM_SERVER_URL),
+                    options
+            );
+
+        } catch (Exception e) {
+            // Enterprise-grade error handling
+            throw new RuntimeException(
+                    "Failed to initialize AndroidDriver. " +
+                    "Check Appium server status, capabilities, and device configuration.",
+                    e
+            );
+        }
+    }
+}

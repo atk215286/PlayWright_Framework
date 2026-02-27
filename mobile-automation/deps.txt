@@ -1,0 +1,60 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------< com.playwright.framework:mobile-automation >-------------
+[INFO] Building mobile-automation 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- dependency:3.7.0:tree (default-cli) @ mobile-automation ---
+[INFO] com.playwright.framework:mobile-automation:jar:1.0-SNAPSHOT
+[INFO] +- io.appium:java-client:jar:9.2.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-api:jar:4.41.0:compile
+[INFO] |  |  \- org.jspecify:jspecify:jar:1.0.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-remote-driver:jar:4.41.0:compile
+[INFO] |  |  +- com.google.auto.service:auto-service-annotations:jar:1.1.1:compile
+[INFO] |  |  +- com.google.guava:guava:jar:33.5.0-jre:compile
+[INFO] |  |  |  +- com.google.guava:failureaccess:jar:1.0.3:compile
+[INFO] |  |  |  +- com.google.guava:listenablefuture:jar:9999.0-empty-to-avoid-conflict-with-guava:compile
+[INFO] |  |  |  +- com.google.errorprone:error_prone_annotations:jar:2.41.0:compile
+[INFO] |  |  |  \- com.google.j2objc:j2objc-annotations:jar:3.1:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-api:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-context:jar:1.59.0:compile
+[INFO] |  |  |  \- io.opentelemetry:opentelemetry-common:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-exporter-logging:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-sdk-common:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-sdk-trace:jar:1.59.0:compile
+[INFO] |  |  +- io.opentelemetry:opentelemetry-sdk:jar:1.59.0:compile
+[INFO] |  |  |  +- io.opentelemetry:opentelemetry-sdk-metrics:jar:1.59.0:compile
+[INFO] |  |  |  \- io.opentelemetry:opentelemetry-sdk-logs:jar:1.59.0:compile
+[INFO] |  |  +- org.seleniumhq.selenium:selenium-http:jar:4.41.0:compile
+[INFO] |  |  +- org.seleniumhq.selenium:selenium-json:jar:4.41.0:compile
+[INFO] |  |  +- org.seleniumhq.selenium:selenium-manager:jar:4.41.0:compile
+[INFO] |  |  \- org.seleniumhq.selenium:selenium-os:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-support:jar:4.41.0:compile
+[INFO] |  \- org.slf4j:slf4j-api:jar:2.0.12:compile
+[INFO] +- org.seleniumhq.selenium:selenium-java:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-chrome-driver:jar:4.41.0:compile
+[INFO] |  |  \- org.seleniumhq.selenium:selenium-chromium-driver:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-devtools-v143:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-devtools-v144:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-devtools-v145:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-edge-driver:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-firefox-driver:jar:4.41.0:compile
+[INFO] |  +- org.seleniumhq.selenium:selenium-ie-driver:jar:4.41.0:compile
+[INFO] |  \- org.seleniumhq.selenium:selenium-safari-driver:jar:4.41.0:compile
+[INFO] +- org.testng:testng:jar:7.10.2:compile
+[INFO] |  +- com.beust:jcommander:jar:1.82:compile
+[INFO] |  \- org.webjars:jquery:jar:3.7.1:runtime
+[INFO] +- com.google.code.gson:gson:jar:2.10.1:compile
+[INFO] \- com.fasterxml.jackson.core:jackson-databind:jar:2.17.0:compile
+[INFO]    +- com.fasterxml.jackson.core:jackson-annotations:jar:2.17.0:compile
+[INFO]    +- com.fasterxml.jackson.core:jackson-core:jar:2.17.0:compile
+[INFO]    \- net.bytebuddy:byte-buddy:jar:1.14.9:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.097 s
+[INFO] Finished at: 2026-02-26T00:47:13-05:00
+[INFO] ------------------------------------------------------------------------

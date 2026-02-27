@@ -1,0 +1,70 @@
+package com.mobile.drivers;
+
+import java.net.URL;
+import java.time.Duration;
+
+import com.google.gson.JsonObject;
+import com.mobile.config.CapabilityLoader;
+
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.ios.IOSDriver;
+//import io.appium.java_client.ios.options.XCUITestOptions;
+
+/**
+ * IOSDriverManager
+ *
+ * Enterprise-grade driver factory responsible for:
+ *  - Loading capabilities from JSON configuration
+ *  - Constructing XCUITestOptions as required by Appium 9.x
+ *  - Creating and returning a fully configured IOSDriver instance
+ *  - Providing predictable and maintainable driver initialization
+ *
+ * This class is intentionally stateless to support parallel execution
+ * and avoid driver leakage across threads or test classes.
+ */
+public class IOSDriverManager {
+
+    /** Path to capability JSON file */
+    private static final String CAPABILITY_PATH =
+            "src/main/resources/ios/capabilities.json";
+
+    /** Appium server endpoint */
+    private static final String APPIUM_SERVER_URL =
+            "http://127.0.0.1:4723";
+
+    /**
+     * Creates and returns a new IOSDriver instance.
+     *
+     * @return AppiumDriver instance configured for iOS
+     */
+    public AppiumDriver createDriver() {
+        try {
+            // Load capabilities from JSON
+            JsonObject caps = CapabilityLoader.load(CAPABILITY_PATH);
+
+            // Build XCUITestOptions (Appium 9.x requirement)
+            XCUITestOptions options = new XCUITestOptions();
+
+            // Apply JSON capabilities dynamically
+            caps.entrySet().forEach(entry ->
+                    options.setCapability(entry.getKey(), entry.getValue().getAsString())
+            );
+
+            // Enterprise-level defaults for stability and reliability
+            options.setNewCommandTimeout(Duration.ofSeconds(120));
+
+            // Create driver instance
+            return new IOSDriver(
+                    new URL(APPIUM_SERVER_URL),
+                    options
+            );
+
+        } catch (Exception e) {
+            // Enterprise-grade error handling
+            throw new RuntimeException(
+                    "Failed to initialize IOSDriver. Verify Appium server status, capabilities, and device configuration.",
+                    e
+            );
+        }
+    }
+}

@@ -1,17 +1,11 @@
 package com.api.tests;
 
 
-import io.restassured.response.Response;
-import com.api.endpoints.ClientEndpoint;
 import org.testng.annotations.Test;
-import io.qameta.allure.*;
 
+import com.api.endpoints.ClientEndpoint;
 
-
-
-
-@Epic("Web Module")
-@Feature("Login")
+import io.restassured.response.Response;
 
 public class EndpointTest {
     ClientEndpoint client = new ClientEndpoint();
@@ -19,22 +13,14 @@ public class EndpointTest {
     
    // @Test
 
-    @Test(description = "Verify login")
-    @Severity(SeverityLevel.CRITICAL)
-    @Description("Validates login with correct credentials")  
+    @Test(description = "Verify login")   
 
     public void getAllObjectsTest() {
        Response response = client.getAllObjects();
        response.then().statusCode(200);
        System.err.println(response.asString());
        System.out.println("NO of items; " +response.jsonPath().getList("$").size());
-        
-       Allure.step("Open login page");
-        Allure.step("Enter username");
-        Allure.step("Enter password");
-        Allure.step("Click login");
-
-    
+           
     }
 
     @Test

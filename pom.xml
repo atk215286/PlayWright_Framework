@@ -19,25 +19,86 @@
     </modules>
 
     <properties>
+        <java.version>17</java.version>
         <allure.version>2.27.0</allure.version>
+        <selenium.version>3.141.59</selenium.version>
+        <playwright.version>1.49.0</playwright.version>
+        <appium.version>7.6.0</appium.version>
+        <restassured.version>5.4.0</restassured.version>
+        <gson.version>2.10.1</gson.version>
+        <jackson.version>2.17.0</jackson.version>
+        <testng.version>7.10.2</testng.version>
     </properties>
 
-    <!-- THIS is the correct place for shared dependencies -->
     <dependencyManagement>
         <dependencies>
 
-            <!-- Allure TestNG -->
+            <!-- Selenium -->
+            <dependency>
+                <groupId>org.seleniumhq.selenium</groupId>
+                <artifactId>selenium-java</artifactId>
+                <version>${selenium.version}</version>
+            </dependency> 
+
+            <!-- Appium -->
+            <dependency>
+                <groupId>io.appium</groupId>
+                <artifactId>java-client</artifactId>
+                <version>${appium.version}</version>
+            </dependency>
+
+            <!-- Playwright -->
+            <dependency>
+                <groupId>com.microsoft.playwright</groupId>
+                <artifactId>playwright</artifactId>
+                <version>${playwright.version}</version>
+            </dependency>
+
+            <!-- REST Assured -->
+            <dependency>
+                <groupId>io.rest-assured</groupId>
+                <artifactId>rest-assured</artifactId>
+                <version>${restassured.version}</version>
+            </dependency>
+
+            <!-- TestNG -->
+            <dependency>
+                <groupId>org.testng</groupId>
+                <artifactId>testng</artifactId>
+                <version>${testng.version}</version>
+            </dependency>
+
+            <!-- Allure (versions only, no runtime here) -->
             <dependency>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-testng</artifactId>
                 <version>${allure.version}</version>
             </dependency>
 
-            <!-- Allure Java Commons -->
+            <!-- JSON -->
             <dependency>
-                <groupId>io.qameta.allure</groupId>
-                <artifactId>allure-java-commons</artifactId>
-                <version>${allure.version}</version>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>${gson.version}</version>
+            </dependency>
+
+            <!-- Jackson -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>3.14.9</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>20240303</version>
             </dependency>
 
         </dependencies>
@@ -47,15 +108,32 @@
         <pluginManagement>
             <plugins>
 
-                <!-- Allure Maven Plugin -->
+                <!-- Compiler -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.11.0</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+
+                <!-- Surefire (parent skips tests) -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>3.2.5</version>
+                    <configuration>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                </plugin>
+
+                <!-- Allure plugin (version only) -->
                 <plugin>
                     <groupId>io.qameta.allure</groupId>
                     <artifactId>allure-maven</artifactId>
                     <version>2.12.0</version>
-                    <configuration>
-                         <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
-                    </configuration>
-
                 </plugin>
 
             </plugins>
