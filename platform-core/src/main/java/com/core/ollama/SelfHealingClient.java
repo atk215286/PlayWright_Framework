@@ -33,7 +33,8 @@ public class SelfHealingClient {
             body.put("prompt", prompt);
             body.put("stream", false);
 
-            RequestBody requestBody = RequestBody.create(body.toString(), JSON);
+           // RequestBody requestBody = RequestBody.create(body.toString(), JSON);
+            RequestBody requestBody = RequestBody.create(JSON, body.toString());
 
             Request request = new Request.Builder()
                     .url(OLLAMA_URL)

@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Mobile Automation Suite" verbose="1" parallel="false">
+
+    <test name="Calculator Test - Android">
+        <parameter name="platform" value="Android"/>
+        <classes>
+            <class name="com.mobile.tests.CalculatorTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -18,6 +18,8 @@ public class AllureTestListener implements ITestListener, IAlterSuiteListener {
 
     @Override
     public void alter(java.util.List<XmlSuite> suites) {
-        System.setProperty("allure.results.directory", "target/allure-results");
-    }
+    String moduleDir = System.getProperty("user.dir");
+    System.out.println("Setting Allure results directory to: " + moduleDir + "/target/allure-results");
+    System.setProperty("allure.results.directory", moduleDir + "/target/allure-results");
+}
 }

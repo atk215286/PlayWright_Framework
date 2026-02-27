@@ -15,48 +15,48 @@
 
     <dependencies>
 
-       
-        <!-- Core -->
-        <dependency>
-            <groupId>com.playwright.framework</groupId>
-            <artifactId>platform-core</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-
-        <!-- REST Assured -->
+        <!-- REST Assured (core API testing library) -->
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>5.4.0</version>
         </dependency>
 
+        <!-- TestNG for API test execution -->
         <dependency>
-            <groupId>io.rest-assured</groupId>
-            <artifactId>json-schema-validator</artifactId>
-            <version>5.4.0</version>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
         </dependency>
 
-        <!-- Jackson -->
+        <!-- JSON parsing (optional but common for API tests) -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+
+        <!-- Jackson for POJO serialization/deserialization -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.17.0</version>
         </dependency>
 
-         <!-- TestNG for @Test -->
-  <!-- TestNG for @Test -->
-  <dependency>
-    <groupId>org.testng</groupId>
-    <artifactId>testng</artifactId>
-    <version>7.8.0</version>
-    </dependency>
-
-
-    <dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-testng</artifactId>
-    </dependency>
-
     </dependencies>
+
+    <build>
+        <plugins>
+
+            <!-- Enable TestNG suite execution for API tests -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>false</skipTests>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>src/test/resources/api-suite.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 
 </project>

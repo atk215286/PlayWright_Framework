@@ -1,0 +1,8 @@
+<suite name="iOS Suite">
+    <parameter name="platform" value="ios"/>
+    <test name="iOS Tests">
+        <classes>
+            <class name="com.mobile.tests.DummyAppTest"/>
+        </classes>
+    </test>
+</suite>
