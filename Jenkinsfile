@@ -3,7 +3,7 @@ pipeline {
 
     tools {
        jdk 'jdk17'          // Must match Jenkins JDK name
-        maven 'maven3'       // Must match Jenkins Maven name
+        maven 'maven3'       // Must match Jenkins Maven    name
     }
 
     stages {
