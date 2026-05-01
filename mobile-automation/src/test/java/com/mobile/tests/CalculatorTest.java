@@ -8,7 +8,6 @@ import org.testng.annotations.Test;
 
 import com.mobile.base.BaseMobileTest;
 
-//import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 
@@ -26,13 +25,15 @@ public class CalculatorTest extends BaseMobileTest {
         AppiumDriver driver = getDriver();
 
         // Tap 1
-        driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_1")).click();
+         driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_7")).click();
+        driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_2")).click();
 
         // Tap +
         driver.findElement(MobileBy.id("com.google.android.calculator:id/op_add")).click();
 
         // Tap 5
-        driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_5")).click();
+        driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_2")).click();
+         driver.findElement(MobileBy.id("com.google.android.calculator:id/digit_4")).click();
 
         // Tap =
        // driver.findElement(MobileBy.id("com.google.android.calculator:id/eq")).click();
