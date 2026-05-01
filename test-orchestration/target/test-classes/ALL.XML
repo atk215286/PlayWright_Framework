@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="AURORA-QEP-Orchestration-Suite" verbose="1" parallel="false">
+
+    <!-- ========================================================= -->
+    <!--                    API AUTOMATION                         -->
+    <!-- ========================================================= 
+    <test name="API-Automation" preserve-order="true">
+        <packages>
+            <package name="com.aurora.api.tests"/>
+        </packages>
+    </test>
+-->
+    <!-- ========================================================= -->
+    <!--                    WEB AUTOMATION                         -->
+    <!-- ========================================================= -->
+    <test name="Web-Automation" preserve-order="true">
+        <packages>
+            <package name="com.aurora.web.tests"/>
+        </packages>
+    </test>
+
+    <!-- ========================================================= -->
+    <!--                   MOBILE AUTOMATION                       -->
+    <!-- ========================================================= -->
+    <test name="Mobile-Automation" preserve-order="true">
+        <packages>
+            <package name="com.aurora.mobile.tests"/>
+        </packages>
+    </test>
+
+</suite>

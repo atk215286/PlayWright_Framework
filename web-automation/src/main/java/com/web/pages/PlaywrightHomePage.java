@@ -1,7 +1,7 @@
 package com.web.pages;
 
-import com.microsoft.playwright.Page;
 import com.core.base.BasePage;
+import com.microsoft.playwright.Page;
 
 public class PlaywrightHomePage extends BasePage {
 
@@ -9,7 +9,7 @@ public class PlaywrightHomePage extends BasePage {
 
     // Use STRING selectors, not Locator objects
     private static final String GET_STARTED = "text=Get started";
-    private static final String GET_STARTED2 = "text= F started";
+   // private static final String GET_STARTED2 = "text= F started";
     private static final String HEADER = "h1";
 
     public PlaywrightHomePage(Page page) {
@@ -21,7 +21,7 @@ public class PlaywrightHomePage extends BasePage {
     }
 
     public void clickGetStarted() {
-        click(GET_STARTED2);   //  matches BasePage.click(String)
+        click(GET_STARTED);   //  matches BasePage.click(String)
     }
 
     public String getHeader() {

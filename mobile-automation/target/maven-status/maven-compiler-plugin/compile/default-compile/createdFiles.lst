@@ -1,1 +1,9 @@
+com\mobile\config\CapabilityLoader.class
+com\mobile\drivers\AppiumDriverFactory.class
+com\mobile\utils\DeviceUtils.class
+com\mobile\enums\PlatformType.class
+com\mobile\utils\GestureUtils.class
+com\mobile\drivers\AndroidDriverManager.class
+com\mobile\base\BaseMobileTest.class
 com\mobile\drivers\AppiumDriverFactory$1.class
+com\mobile\enums\DeviceType.class
