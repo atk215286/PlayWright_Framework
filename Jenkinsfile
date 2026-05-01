@@ -1,10 +1,10 @@
 pipeline {
     agent { label 'windows-local' }
 
-   // tools {
-     //   jdk 'jdk17'          // Must match Jenkins JDK name
-       // maven 'maven3'       // Must match Jenkins Maven name
-    //}
+    tools {
+       jdk 'jdk17'          // Must match Jenkins JDK name
+        maven 'maven3'       // Must match Jenkins Maven    name
+    }
 
     stages {
 
@@ -20,22 +20,30 @@ pipeline {
             }
         }
 
-        stage('Run Specific Test') {
+        stage('Run WEB Test') {
             steps {
                 // Run only ONE test class
-               // bat 'mvn -Dtest=com.playwright.tests.HomePageTest test'
+                bat 'mvn -Dtest=com.playwright.tests.HomePageTest test'
                 // To run a specific test method, use:
                 // bat 'mvn -Dtest=com.playwright.tests.HomePageTest#testHomePageTitle test'
 
-                bat 'mvn -Dtest=com.playwright.api.EndpointTest test'
+                //bat 'mvn -Dtest=com.playwright.api.EndpointTest test'
             }
         }
 
+        stage('Run API Tests') {
+            steps {
+                bat 'mvn -Dtest=com.api.tests.EndpointTest test'
+            }
+        }
 
         stage('Archive Reports') {
             steps {
                 archiveArtifacts artifacts: 'target/**', allowEmptyArchive: true
             }
         }
+
+        
+}
     }
 }
