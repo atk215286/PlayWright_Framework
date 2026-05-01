@@ -1,10 +1,13 @@
 package com.web;
 
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import com.core.base.BaseTest;
 import com.core.factory.PageFactoryManager;
 import com.web.pages.PlaywrightHomePage;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+
+import io.qameta.allure.Allure;
 
 
 public class HomePageTest extends BaseTest {
@@ -20,6 +23,8 @@ public class HomePageTest extends BaseTest {
                 header.contains("Playwright"),
                 "Expected header to contain 'Playwright' but got: " + header
         );
+        Allure.step("Name: " + header);
+        System.out.println("TEST CASE 01 " + header);
     }
 
     @Test
@@ -33,6 +38,7 @@ public class HomePageTest extends BaseTest {
                 page.url().contains("playwright.dev/docs"),
                 "Expected URL to contain 'docs' but got: " + page.url()
         );
+        System.out.println("TEST CASE 02 " + page.url());
     }
 
     @Test
@@ -41,12 +47,13 @@ public class HomePageTest extends BaseTest {
 
         homePage.open();
         homePage.clickGetStarted();
-
+        String header=homePage.getHeader();
         String currentUrl = page.url();
 
         Assert.assertTrue(
                 currentUrl.contains("docs"),
                 "Expected navigation to docs page, but got: " + currentUrl
         );
+        System.out.println("TEST CASE 03 " + header);
     }
 }
